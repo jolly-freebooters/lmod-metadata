@@ -1,0 +1,141 @@
+{
+  "fields": [
+    {
+      "name": "transaction_unique_identifier",
+      "title": "Unique identifier for the property transaction",
+      "type": "string",
+      "format": "uuid",
+      "example": "{44F406B7-3033-1095-E063-4704A8C048D4}",
+      "description": "A reference number which is generated automatically recording each published sale. The number is unique and will change each time a sale is recorded. Following the inclusion of Additional Price Paid Data we have made some changes to the linked data transaction records. Previously when a transaction record was updated, the old transaction record was removed and a new one with a new Uniform Resource Identifier (URI) was added. This could cause broken references to the transaction record that had been removed. To resolve this issue, the record will be given a fixed URI that will not change if corrections are made to the data. HMLR will change the individual properties/attributes of a transaction record if the data is corrected in any way.",
+      "constraints": {"required": true, "unique": true}
+    },
+    {
+      "name": "price",
+      "title": "Price in GBP (£) stated on the transfer deed for this transaction.",
+      "type": "integer",
+      "example": "575000",
+      "description": "When the price paid data for a property transaction is captured, the price paid information quoted in the transfer deed lodged for registration is recorded. Some commercial property transactions lodged for registration quote the price paid and make a statement about value added tax (VAT). This statement may include the specific amount of VAT paid or may state that VAT is ‘excluded’ or ‘included’. There will also be occasions when VAT is not mentioned. When the price paid quoted in a transfer deed differentiates between the consideration and the VAT, the price paid recorded will exclude VAT, eg if a transfer deed quotes the ‘price paid to be £100,000 plus VAT’ only £100,000 will be recorded. However when the consideration is inclusive of VAT, eg the ‘price paid is stated to be £100,000 inclusive of VAT, the transaction is excluded from the dataset.",
+      "constraints": {"required": true}
+    },
+    {
+      "name": "date_of_transfer",
+      "title": "Date when the sale was completed, as stated on the transfer deed.",
+      "type": "datetime",
+      "example": "2025-11-07 00:00",
+      "constraints": {"required": true},
+      "description": "Date when the sale was completed, as stated on the transfer deed."
+    },
+    {
+      "name": "postcode",
+      "title": "This is the British postcode used at the time of the original transaction.",
+      "type": "string",
+      "example": "IG6 2DZ",
+      "description": "This is the postcode used at the time of the original transaction. Note that postcodes can be reallocated and these changes are not reflected in the Price Paid Dataset.",
+      "constraints": {
+        "pattern": "^[A-Z]{1,2}[0-9R][0-9A-Z]? ?[0-9][ABDEFGHJLNPQRSTUWXYZ]{2}$",
+        "required": true
+      }
+    },
+    {
+      "name": "property_type",
+      "title": "Property Type: Detached, Semi-detached, Terraced, Flats/Maisonettes or Other",
+      "type": "string",
+      "example": "Detached",
+      "description": "Detached, Semi-Detached, Terraced, Flats/Maisonettes or Other, only records the above categories to describe property type, does not separately identify bungalows. End-of-terrace properties are included in the Terraced category. ‘Other’ is only valid where the transaction relates to a property type that is not covered by existing values, for example where a property comprises more than one large parcel of land.",
+      "constraints": { "enum": ["D", "S", "T", "F", "O"], "required": true},
+      "mapping": {
+        "D": "Detached",
+        "S": "Semi-Detached",
+        "T": "Terraced",
+        "F": "Flats/Maisonettes",
+        "O": "Other"
+      }
+    },
+    {
+      "name": "property_new_or_established",
+      "title": "Property age at time of transaction: newly-built, or established-building.",
+      "type": "string",
+      "example": "Y",
+      "description": "Indicates the age of the property and applies to all price paid transactions, residential and non-residential. A newly built property or an established residential building.",
+      "constraints": {"enum": ["Y", "N"]},
+      "mapping": {
+        "Y": "newly-built",
+        "N": "established-building"
+      }
+    },
+    {
+      "name": "lease_type",
+      "title": "Lease type: Freehold or Leasehold",
+      "type": "string",
+      "example": "L",
+      "description": "Relates to the tenure: F = Freehold, L= Leasehold etc. Note that HM Land Registry does not record leases of 7 years or less in the Price Paid Dataset.",
+      "constraints": {"enum": ["L", "F"]},
+      "mapping": {
+        "L": "Leasehold",
+        "F": "Freehold"
+      }
+    },
+    {
+      "name": "paon",
+      "title": "Primary Addressable Object Name.",
+      "type": "string",
+      "example": "MOORES COURT",
+      "description": "Typically the house number or name."
+    },
+    {
+      "name": "saon",
+      "title": "Secondary Addressable Object Name",
+      "type": "string",
+      "example": "FLAT 11",
+      "description": "Where a property has been divided into separate units (for example, flats), the PAON will identify the building and a SAON will be specified that identifies the separate unit/flat."
+    },
+    {
+      "name": "street",
+      "title": "Street",
+      "type": "string",
+      "example": "PEDDERS LANE",
+      "description": "Street. Address data processed against Ordnance Survey’s AddressBase Premium product, which incorporates Royal Mail’s PAF® database (Address Data)."
+    },
+    {
+      "name": "locality",
+      "title": "Locality",
+      "type": "string",
+      "example": "ALTHAM",
+      "description": "Locality. Address data processed against Ordnance Survey’s AddressBase Premium product, which incorporates Royal Mail’s PAF® database (Address Data)."
+    },
+    {
+      "name": "town_or_city",
+      "title": "Town/City",
+      "type": "string",
+      "example": "PRESTON",
+      "description": "Town/City. Address data processed against Ordnance Survey’s AddressBase Premium product, which incorporates Royal Mail’s PAF® database (Address Data)."
+    },
+    {
+      "name": "district",
+      "title": "District",
+      "type": "string",
+      "example": "LANCASTER",
+      "description": "District. Address data processed against Ordnance Survey’s AddressBase Premium product, which incorporates Royal Mail’s PAF® database (Address Data)."
+    },
+    {
+      "name": "county",
+      "title": "County",
+      "type": "string",
+      "example": "GREATER MANCHESTER",
+      "description": "County. Address data processed against Ordnance Survey’s AddressBase Premium product, which incorporates Royal Mail’s PAF® database (Address Data)."
+    },
+    {
+      "name": "price_paid_transaction_category",
+      "title": "Type of Price Paid Transaction: Standard or Additional",
+      "type": "string",
+      "example": "A",
+      "description": "Indicates the type of Price Paid transaction. A = Standard Price Paid entry, includes single residential property sold for value. B = Additional Price Paid entry including transfers under a power of sale/repossessions, buy-to-lets (where they can be identified by a Mortgage), transfers to non-private individuals and sales where the property type is classed as ‘Other’. Note that category B does not separately identify the transaction types stated. HM Land Registry has been collecting information on Category A transactions from January 1995. Category B transactions were identified from October 2013.",
+      "constraints": {"enum": ["A", "B"], "required": true},
+      "mapping": {
+        "A": "Standard",
+        "B": "Additional"
+      }
+    }
+  ],
+  "primaryKey": ["transaction_unique_identifier"]
+}
