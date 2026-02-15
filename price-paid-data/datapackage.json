@@ -1,0 +1,46 @@
+{
+  "name": "price-paid-data",
+  "created": "2025-02-15",
+  "updated": "2026-02-15",
+  "title": "Price Paid Data Tools: A Collection of HMLR Price Paid datasets",
+  "descriptor": "A collection of house price transaction micro-data covering all of England and Wales, published by HMLR, from 1995 onwards.",
+  "guidance": "Price Paid Data tracks property sales in England and Wales submitted to HM Land Registry for registration. Price Paid Data is based on the raw data released each month. The amount of time between the England and Wales that are sold for sale of a property and the registration of this information with HM Land Registry varies. It typically ranges between 2 weeks and 2 months. Data for the two most recent months is therefore incomplete and does not give an indication of final monthly volumes. Occasionally the interval between sale and registration is longer than two months. The small number of sales affected cannot be updated for publication until the sales are lodged for registration. The single large file and yearly files have amendments and/or deletions applied to the data, ensuring the data is complete, up to date and accurate.",
+  "scope": "Price Paid Data includes information on all residential property sales in England and Wales that are sold for value and are lodged with HMLR for registration. HMLR Price Paid Data excludes: sales that have not been lodged with HM Land Registry; sales that were not for value; transfers, conveyances, assignments or leases at a premium with nominal rent, which are: ‘Right to buy’ sales at a discount; subject to an existing mortgage; to effect the sale of a share in a property, for example, a transfer between parties on divorce; by way of a gift; under a compulsory purchase order; under a court order; to Trustees appointed under Deed of appointment; Vesting Deeds Transmissions or Assents of more than one property.",
+  "licenses": [
+    {
+      "name": "OGL-UK-3.0",
+      "path": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "title": "Open Government Licence v3.0", 
+      "other_restictions": "Price Paid Data contains address data processed against Ordnance Survey’s AddressBase Premium product, which incorporates Royal Mail’s PAF® database (Address Data). Royal Mail and Ordnance Survey permit your use of Address Data in the Price Paid Data: for personal and/or non-commercial use to display for the purpose of providing residential property price information services. If you want to use the Address Data in any other way, you must contact Royal Mail. Email address.management@royalmail.com."
+    }
+  ],
+  "sources": [
+    {
+      "title": "HM Land Registry",
+      "path": "https://www.gov.uk/government/collections/price-paid-data"
+    }
+  ],
+  "keywords": ["housing", "house-price", "price", "price-paid", "UK"],
+  "resources": [
+    {
+      "name": "ppd-year-2025",
+      "path": "http://prod.publicdata.landregistry.gov.uk.s3-website-eu-west-1.amazonaws.com/pp-2025.csv",
+      "title": "Price Paid Year 2025",
+      "description": "The files include standard and additional price paid data transactions received at HM Land Registry in the period from 1 January to 31 December for the titled year. The data is updated monthly and the sizes of these files range from 115 MB to 230 MB.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": "https://raw.githubusercontent.com/jolly-freebooters/lmod-metadata/refs/heads/main/price-paid-data/schema.json"
+    },
+    {
+      "name": "ppd-all-time",
+      "path": "http://prod.publicdata.landregistry.gov.uk.s3-website-eu-west-1.amazonaws.com/pp-complete.csv",
+      "title": "Price Paid All Time",
+      "description": "These include standard and additional price paid data transactions received at HM Land Registry from 1 January 1995 to the most current monthly data. The data is updated monthly and the average size of this file is 3.7 GB.",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "encoding": "utf-8",
+      "schema": "https://raw.githubusercontent.com/jolly-freebooters/lmod-metadata/refs/heads/main/price-paid-data/schema.json"
+    }
+  ]
+}
