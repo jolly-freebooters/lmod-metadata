@@ -23,7 +23,7 @@
   "keywords": ["housing", "house-price", "price", "price-paid", "UK"],
   "resources": [
     {
-      "name": "ppd-year-2025",
+      "name": "ppd_year_2025",
       "path": "http://prod.publicdata.landregistry.gov.uk.s3-website-eu-west-1.amazonaws.com/pp-2025.csv",
       "title": "Price Paid Year 2025",
       "description": "The files include standard and additional price paid data transactions received at HM Land Registry in the period from 1 January to 31 December for the titled year. The data is updated monthly and the sizes of these files range from 115 MB to 230 MB.",
@@ -33,7 +33,7 @@
       "schema": "https://raw.githubusercontent.com/jolly-freebooters/lmod-metadata/refs/heads/main/price-paid-data/schema.json"
     },
     {
-      "name": "ppd-all-time",
+      "name": "ppd_all_time",
       "path": "http://prod.publicdata.landregistry.gov.uk.s3-website-eu-west-1.amazonaws.com/pp-complete.csv",
       "title": "Price Paid All Time",
       "description": "These include standard and additional price paid data transactions received at HM Land Registry from 1 January 1995 to the most current monthly data. The data is updated monthly and the average size of this file is 3.7 GB.",
