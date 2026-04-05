@@ -40,7 +40,8 @@
       "format": "csv",
       "mediatype": "text/csv",
       "encoding": "utf-8",
-      "schema": "https://raw.githubusercontent.com/jolly-freebooters/lmod-metadata/refs/heads/main/price-paid-data/schema.json"
+      "schema": "https://raw.githubusercontent.com/jolly-freebooters/lmod-metadata/refs/heads/main/price-paid-data/schema.json",
+      "schema_exclusions": ["record_status"]
     }
   ]
 }
