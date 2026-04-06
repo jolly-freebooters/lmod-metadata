@@ -69,10 +69,11 @@
       "type": "string",
       "example": "L",
       "description": "Relates to the tenure: F = Freehold, L= Leasehold etc. Note that HM Land Registry does not record leases of 7 years or less in the Price Paid Dataset.",
-      "constraints": {"enum": ["L", "F"]},
+      "constraints": {"enum": ["L", "F", "U"]},
       "mapping": {
         "L": "Leasehold",
-        "F": "Freehold"
+        "F": "Freehold", 
+        "U": "Unknown"
       }
     },
     {
