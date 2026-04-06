@@ -33,7 +33,7 @@
       "description": "This is the postcode used at the time of the original transaction. Note that postcodes can be reallocated and these changes are not reflected in the Price Paid Dataset.",
       "constraints": {
         "pattern": "^[A-Z]{1,2}[0-9R][0-9A-Z]? ?[0-9][ABDEFGHJLNPQRSTUWXYZ]{2}$",
-        "required": true
+        "required": false
       }
     },
     {
